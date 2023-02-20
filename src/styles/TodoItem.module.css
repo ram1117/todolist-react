@@ -1,0 +1,36 @@
+.todoItem {
+  padding: 2% 5%;
+  background: #f0efef;
+  border-bottom: solid 3px #fff;
+}
+
+.todoItem-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2em;
+}
+
+.todoItem-content > p {
+  width: 70%;
+  font-size: 1em;
+}
+
+.todoEditText {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dfdfdf;
+  outline: none;
+}
+
+.todoButton {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 0.8em;
+}
+
+.checkBox {
+  font-size: 1em;
+}
