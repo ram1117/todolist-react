@@ -22,10 +22,19 @@ const TodoLogic = () => {
     setTodos([...todos.filter((todo) => todo.id !== id)]);
   };
 
+  const addTodoItem = (title) => {
+    const newTodo = {
+      id: 4,
+      task: title,
+      completed: false,
+    };
+    setTodos([...todos, newTodo]);
+  };
+
   return (
     <>
       <div className="todo-logic">
-        <InputTodo />
+        <InputTodo addTodoItem={addTodoItem} />
         <TodoList
           todoItems={todos}
           handleChange={handleChange}
