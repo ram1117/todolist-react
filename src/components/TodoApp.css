@@ -14,3 +14,9 @@
   margin: 1% auto;
   border: solid 1px black;
 }
+
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
