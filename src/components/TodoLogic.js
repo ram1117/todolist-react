@@ -18,11 +18,19 @@ const TodoLogic = () => {
     }));
   };
 
+  const delTodo = (id) => {
+    setTodos([...todos.filter((todo) => todo.id !== id)]);
+  };
+
   return (
     <>
       <div className="todo-logic">
         <InputTodo />
-        <TodoList todoItems={todos} handleChange={handleChange} />
+        <TodoList
+          todoItems={todos}
+          handleChange={handleChange}
+          delTodo={delTodo}
+        />
       </div>
     </>
   );

@@ -1,10 +1,15 @@
 import PropTypes from 'prop-types';
 
-const TodoItem = ({ itemProp, handleChange }) => {
-  TodoItem.defaultProps = { itemProp: null, handleChange: null };
+const TodoItem = ({ itemProp, handleChange, delTodo }) => {
+  TodoItem.defaultProps = {
+    itemProp: null,
+    handleChange: null,
+    delTodo: null,
+  };
   TodoItem.propTypes = {
     itemProp: PropTypes.objectOf(PropTypes.string),
     handleChange: PropTypes.func,
+    delTodo: PropTypes.func,
   };
 
   return (
@@ -15,6 +20,12 @@ const TodoItem = ({ itemProp, handleChange }) => {
         checked={itemProp.completed}
       />
       <input type="text" value={itemProp.task} />
+      <button
+        type="button"
+        onClick={() => delTodo(itemProp.id)}
+      >
+        Delete
+      </button>
     </li>
   );
 };
