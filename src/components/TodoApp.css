@@ -13,14 +13,14 @@
   display: flex;
 }
 
-.inputTodo-content>input {
+.inputTodo-content > input {
   width: 85%;
   padding: 2%;
   font-size: 1.2em;
   border: none;
 }
 
-.inputTodo-content>button {
+.inputTodo-content > button {
   width: 15%;
   cursor: pointer;
   border: none;
