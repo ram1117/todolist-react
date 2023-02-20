@@ -1,0 +1,22 @@
+.todoApp {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.input-todo {
+  width: 70%;
+  margin: 1% auto;
+}
+
+.todo-list {
+  height: 60vh;
+  margin: 1% auto;
+  border: solid 1px black;
+}
+
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
