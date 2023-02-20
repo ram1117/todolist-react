@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import InputTodo from './InputTodo';
 import TodoList from './TodoList';
 
 const TodoLogic = () => {
-  const [todos, setTodos] = useState([
-    { id: 1, task: 'setup project', completed: true },
-    { id: 2, task: 'create components', completed: false },
-    { id: 3, task: 'integrate components', completed: false }]);
-  console.log(todos);
+  const getStoredTasks = () => {
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    return tasks || [];
+  };
+  const [todos, setTodos] = useState(getStoredTasks);
 
   const handleChange = (id) => {
     setTodos((prevState) => prevState.map((todo) => {
@@ -24,12 +25,26 @@ const TodoLogic = () => {
 
   const addTodoItem = (title) => {
     const newTodo = {
-      id: 4,
+      id: uuidv4(),
       task: title,
       completed: false,
     };
     setTodos([...todos, newTodo]);
   };
+
+  const updateTask = (updatedTask, id) => {
+    setTodos(todos.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, task: updatedTask };
+      }
+      return todo;
+    }));
+  };
+
+  useEffect(() => {
+    const stringifiedTodos = JSON.stringify(todos);
+    localStorage.setItem('tasks', stringifiedTodos);
+  }, [todos]);
 
   return (
     <>
@@ -39,6 +54,7 @@ const TodoLogic = () => {
           todoItems={todos}
           handleChange={handleChange}
           delTodo={delTodo}
+          updateTask={updateTask}
         />
       </div>
     </>

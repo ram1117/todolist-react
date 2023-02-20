@@ -1,0 +1,21 @@
+.header {
+  font-family: Lato, sans-serif;
+}
+
+.header h1 {
+  font-size: 3em;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5em;
+  line-height: 1em;
+  color: blue;
+}
+
+.subheader {
+  font-size: 1.5em;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5em;
+  line-height: 1em;
+  color: blue;
+}
