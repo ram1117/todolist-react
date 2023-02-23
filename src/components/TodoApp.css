@@ -1,0 +1,38 @@
+.todoApp {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.inputTodo-wrapper {
+  border: solid 2px grey;
+  border-radius: 10px;
+}
+
+.inputTodo-content {
+  display: flex;
+}
+
+.inputTodo-content > input {
+  width: 85%;
+  padding: 2%;
+  font-size: 1.2em;
+  border: none;
+}
+
+.inputTodo-content > button {
+  width: 15%;
+  cursor: pointer;
+  border: none;
+  background: #fff;
+  font-size: 1.2em;
+}
+
+.todo-list {
+  height: 60vh;
+  margin: 1% 0;
+  padding: 0;
+  border: solid 1px black;
+  list-style: none;
+  overflow: auto;
+}
